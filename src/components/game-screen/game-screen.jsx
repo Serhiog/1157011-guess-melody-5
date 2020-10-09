@@ -1,11 +1,11 @@
-import React, { PureComponent } from "react";
+import React from "react";
 import PropTypes from 'prop-types';
-import { Redirect } from 'react-router-dom';
-import { GameType } from '../../const';
+import {Redirect} from 'react-router-dom';
+import {GameType} from '../../const';
 import ArtistQuestionScreen from '../question-artist/question-artist';
 import GenreQuestionScreen from '../question-genre/question-genre';
 
-class GameScreen extends PureComponent {
+class GameScreen extends React.Component {
   constructor(props) {
     super(props);
 
@@ -14,9 +14,10 @@ class GameScreen extends PureComponent {
     };
   }
   render() {
-    const { questions } = this.props;
-    const { step } = this.state;
+    const {questions} = this.props;
+    const {step} = this.state;
     const question = questions[step];
+
 
     if (step >= questions.length || !question) {
       return (

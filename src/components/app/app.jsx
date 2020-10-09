@@ -9,17 +9,20 @@ import GenreQuestionScreen from "../question-genre/question-genre";
 import SuccessResult from "../success-result/success-result";
 import GameScreen from "../game-screen/game-screen";
 
+
 const App = (props) => {
   const { errorsCount, questions } = props;
   const [firstQuestion, secondQuestion] = questions;
+  const handleOnAnswer = () => { };
 
   return (
+
     <BrowserRouter>
       <Switch>
         <Route exact
           path="/"
           render={({ history }) => (
-            <WelcomeScreen
+            < WelcomeScreen
               onPlayButtonClick={() => history.push(`/game`)}
               errorsCount={errorsCount}
             />
@@ -34,13 +37,13 @@ const App = (props) => {
         <Route exact path="/dev-artist">
           <ArtistQuestionScreen
             question={secondQuestion}
-            onAnswer={() => { }}
+            onAnswer={handleOnAnswer}
           />
         </Route>
         <Route exact path="/dev-genre">
           <GenreQuestionScreen
             question={firstQuestion}
-            onAnswer={() => { }}
+            onAnswer={handleOnAnswer}
           />
         </Route>
         <Route exact path="/result">
