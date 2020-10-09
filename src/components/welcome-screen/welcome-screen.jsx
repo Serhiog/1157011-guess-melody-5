@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 const WelcomeScreen = (props) => {
 
-  const { errorsCount, onPlayButtonClick } = props;
+  const {errorsCount, onPlayButtonClick} = props;
 
   return (
     <section className="welcome">

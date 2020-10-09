@@ -1,5 +1,5 @@
 import React from "react";
-import { Switch, Route, BrowserRouter } from "react-router-dom";
+import {Switch, Route, BrowserRouter} from "react-router-dom";
 import PropTypes from "prop-types";
 import WelcomeScreen from "../welcome-screen/welcome-screen";
 import FailResult from "../fail-result/fail-result";
@@ -11,7 +11,7 @@ import GameScreen from "../game-screen/game-screen";
 
 
 const App = (props) => {
-  const { errorsCount, questions } = props;
+  const {errorsCount, questions} = props;
   const [firstQuestion, secondQuestion] = questions;
   const handleOnAnswer = () => { };
 
@@ -21,7 +21,7 @@ const App = (props) => {
       <Switch>
         <Route exact
           path="/"
-          render={({ history }) => (
+          render={({history}) => (
             < WelcomeScreen
               onPlayButtonClick={() => history.push(`/game`)}
               errorsCount={errorsCount}
